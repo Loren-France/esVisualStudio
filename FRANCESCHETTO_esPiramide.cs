@@ -21,17 +21,17 @@ namespace esPiramide
 
 			WriteLine();
 
-			for (int i = 1; i <= height; i++)
+			for (int i = 1; i <= height; i++) //FOR per gestire le righe di altezza della piramide
 			{
-				int c = 1;
-				int dec = i;
+				int c = 1; // Parte da 1 fino al numero in mezzo
+				int dec = i; // Parte dal numero in mezzo fino a 1
 
-				for (int k = height - i; k >= 1; k--)
+				for (int k = height - i; k >= 1; k--) //FOR per mettere gli spazi vuoti prima dei numeri
 				{
 					Write(" ");
 				}
 
-				for (int j = 1; j <= i * 2 - 1; j++)
+				for (int j = 1; j < i * 2; j++)
 				{
 
 					if (c >= i)
