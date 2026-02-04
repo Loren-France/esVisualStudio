@@ -21,14 +21,20 @@ namespace esPiramide
 
 			WriteLine();
 
-			for (int i = 0; i < height; i++)
+			for (int i = 1; i <= height; i++)
 			{
 				int c = 1;
-				int dec = height;
+				int dec = i;
 
-				for (int j = 1; j <= height * 2 - 1; j++)
+				for (int k = height - i; k >= 1; k--)
 				{
-					if (c >= height)
+					Write(" ");
+				}
+
+				for (int j = 1; j <= i * 2 - 1; j++)
+				{
+
+					if (c >= i)
 					{
 						Write($"{dec}");
 						dec--;
