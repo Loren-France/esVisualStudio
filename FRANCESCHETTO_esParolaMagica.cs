@@ -8,20 +8,23 @@ namespace esParolaMagica
 		static void Main(string[] args)
 		{
 			string parola;
-			int c = 0;
+			int c = 0; // conta vocali diverse trovate
+
 			WriteLine("Programma che valuta se una parola si può considerare 'magica'");
 			Write("Inserisci una parola: ");
 			parola = ReadLine();
 
-			if (parola == null)
+			while (parola == "")
 			{
-				WriteLine("Errore, non hai inserito nessuna parola, reinserire: ");
+				Write("Errore, reinserisci una parola valida: ");
 				parola = ReadLine();
 			}
 
-			for (int i = 0; i < parola.Length; i++)
+			char[] vocali = { 'a', 'e', 'i', 'o', 'u' };
+
+			for (int i = 0; i < vocali.Length; i++)
 			{
-				if (parola[i] == 'a' || parola[i] == 'e' || parola[i] == 'i' || parola[i] == 'o' || parola[i] == 'u' || parola[i] == 'A' || parola[i] == 'E' || parola[i] == 'I' || parola[i] == 'O' || parola[i] == 'U')
+				if (parola.ToLower().Contains(vocali[i]))
 				{
 					c++;
 				}
@@ -29,12 +32,11 @@ namespace esParolaMagica
 
 			if (c >= 4)
 			{
-				WriteLine($"La parola '{parola}' è magica, in quanto contiene {c} vocali.");
-
+				WriteLine($"La parola '{parola}' è magica");
 			}
 			else
 			{
-				WriteLine($"La parola '{parola}' NON è magica, in quanto contiene solo {c} vocali.");
+				WriteLine($"La parola '{parola}' NON è magica");
 			}
 		}
 	}
